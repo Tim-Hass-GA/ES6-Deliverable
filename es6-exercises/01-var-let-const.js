@@ -6,16 +6,21 @@
 // functions in the array.
 // Devs often encounter this problem when adding event listeners to a group of items
 //
-// Do you know the solution for such situations in ES5? 
+// Do you know the solution for such situations in ES5?
 // Use ES6 to create a "cleaner" solution?
 
 "use strict"
 
 var callbacks = []
-for (var i = 0; i < 10; i++) {
+// change var to let
+// this will do block level scoping
+for (let i = 0; i < 10; i++) {
   callbacks.push(function() { console.log(i) })
 }
 
+callbacks[1]()
 callbacks[2]()
+callbacks[3]()
+callbacks[4]()
 
 // Source: http://marijnhaverbeke.nl/talks/es6_falsyvalues2015/exercises/#Closing_over_scope

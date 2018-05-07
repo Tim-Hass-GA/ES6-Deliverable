@@ -4,9 +4,25 @@
 // Use destructuring and a higher-order function to make this code cleaner.
 // Hint: you might want to use a new array method called find, so look that up!
 
+// function detectCollision(objects, point) {
+//   for (let i = 0; i < objects.length; i++) {
+//     let object = objects[i]
+//     if (point.x >= object.x && point.x <= object.x + object.width &&
+//         point.y >= object.y && point.y <= object.y + object.height)
+//       return object
+//   }
+// }
+//
+// const myObjects = [
+//   {x:  10, y: 20, width: 30, height: 30},
+//   {x: -40, y: 20, width: 30, height: 30},
+//   {x:   0, y:  0, width: 10, height:  5}
+// ]
+
 function detectCollision(objects, point) {
-  for (let i = 0; i < objects.length; i++) {
-    let object = objects[i]
+  for (let object of objects) {
+    let {x, y, width, height } = objects
+    // work on this secton //
     if (point.x >= object.x && point.x <= object.x + object.width &&
         point.y >= object.y && point.y <= object.y + object.height)
       return object
@@ -22,3 +38,4 @@ const myObjects = [
 console.log(detectCollision(myObjects, {x: 4, y: 2}))
 
 // source: http://marijnhaverbeke.nl/talks/es6_falsyvalues2015/exercises/#Improve_this_code
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment

@@ -5,15 +5,21 @@ var myRide = {
   model: "Model T",
   year: 1959,
   location: "the Office",
-  driveTo: function ( place ) {
-    this.location = place || "Home"
+  driveTo: function ( place = 'home') {
+    this.location = place
   }
 }
 
 myRide.driveTo("Walmart")
-myRide.location // "Walmart"
+var location_1 = myRide.location // "Walmart"
+console.log(location_1)
+
+console.log(`${myRide.make} is taking me to ${location_1} and,`)
 
 // vs...
 
 myRide.driveTo()
-myRide.location // "Home"
+var location_2 = myRide.location // "Home"
+console.log(location_2)
+
+console.log(`then we are going to ${location_2}.`)

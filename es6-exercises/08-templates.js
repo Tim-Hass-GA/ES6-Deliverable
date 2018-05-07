@@ -11,7 +11,8 @@ const people = [{name: "Jennie", role: "senior"},
                 {name: "Martin", role: "senior"},
                 {name: "Anneli", role: "junior"}]
 
-let message = YOUR CODE HERE
+let message = `There are ${people.length} peope on the tooling team.\n
+There names are ${ people.map( person => person.name )}.`
 
 console.log(message)
 
